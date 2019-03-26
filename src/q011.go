@@ -10,7 +10,7 @@ import (
 
 type Ban struct {
 	visitIPs map[string]time.Time
-	rmx      sync.RWMutex
+	lock     sync.Mutex
 }
 
 func NewBan(ctx context.Context) *Ban {
@@ -20,13 +20,13 @@ func NewBan(ctx context.Context) *Ban {
 		for {
 			select {
 			case <-timer.C:
-				o.rmx.Lock()
+				o.lock.Lock()
 				for k, v := range o.visitIPs {
 					if time.Now().Sub(v) >= time.Minute*1 {
 						delete(o.visitIPs, k)
 					}
 				}
-				o.rmx.Unlock()
+				o.lock.Unlock()
 				timer.Reset(time.Minute * 1)
 			case <-ctx.Done():
 				return
@@ -36,15 +36,12 @@ func NewBan(ctx context.Context) *Ban {
 	return o
 }
 func (o *Ban) visit(ip string) bool {
-	o.rmx.RLock()
+	o.lock.Lock()
+	defer o.lock.Unlock()
 	if _, ok := o.visitIPs[ip]; ok {
-		o.rmx.RUnlock()
 		return true
 	}
-	o.rmx.RUnlock()
-	o.rmx.Lock()
 	o.visitIPs[ip] = time.Now()
-	o.rmx.Unlock()
 	return false
 }
 func main() {
