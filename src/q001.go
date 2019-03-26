@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	letter,number := make(chan bool),make(chan bool)
+
+	letter, number := make(chan bool), make(chan bool)
 	wait := sync.WaitGroup{}
 
 	go func() {
@@ -31,20 +32,20 @@ func main() {
 		str := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 		i := 0
-		for{
+		for {
 			select {
 			case <-letter:
-				if i >= strings.Count(str,"")-1 {
+				if i >= strings.Count(str, "")-1 {
 					wait.Done()
 					return
 				}
 
-				fmt.Print(str[i:i+1])
+				fmt.Print(str[i : i+1])
 				i++
-				if i >= strings.Count(str,"") {
+				if i >= strings.Count(str, "") {
 					i = 0
 				}
-				fmt.Print(str[i:i+1])
+				fmt.Print(str[i : i+1])
 				i++
 				number <- true
 				break
@@ -54,8 +55,6 @@ func main() {
 
 		}
 	}(&wait)
-	number<-true
+	number <- true
 	wait.Wait()
 }
-
-
