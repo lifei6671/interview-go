@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -47,7 +48,7 @@ func (o *Ban) visit(ip string) bool {
 	return false
 }
 func main() {
-	success := 0
+	success := int64(0)
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
@@ -62,7 +63,7 @@ func main() {
 				defer wait.Done()
 				ip := fmt.Sprintf("192.168.1.%d", j)
 				if !ban.visit(ip) {
-					success++
+					atomic.AddInt64(&success, 1)
 				}
 			}(j)
 		}
