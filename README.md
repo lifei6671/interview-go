@@ -11,3 +11,5 @@
 - [goroutine和channel使用一](question/q009.md)
 - [实现阻塞读的并发安全Map](question/q010.md)
 - [高并发下的锁与map读写问题](question/q011.md)
+- [定时与 panic 恢复](question/q012.md)
+- [为 sync.WaitGroup 中Wait函数支持 WaitTimeout 功能.](question/q013.md)
