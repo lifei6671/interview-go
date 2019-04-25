@@ -13,3 +13,4 @@
 - [高并发下的锁与map读写问题](question/q011.md)
 - [定时与 panic 恢复](question/q012.md)
 - [为 sync.WaitGroup 中Wait函数支持 WaitTimeout 功能.](question/q013.md)
+- [七道语法找错题目](question/q014.md)
