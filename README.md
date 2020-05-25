@@ -16,3 +16,8 @@
 - [七道语法找错题目](question/q014.md)
 - [golang 并发题目测试](question/q015.md)
 - [记一道字节跳动的算法面试题](question/q016.md)
+
+## Redis基础
+
+- [Redis 基础数据结构](base/redis.md)
+- [Redis中的底层数据结构](base/redis-data-structure.md)
