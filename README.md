@@ -19,6 +19,7 @@
 
 ## Golang 理论
 
+- [Go语言的GPM调度器是什么？](base/go-gpm.md)
 - [Goroutine调度策略](base/go-scheduler.md)
 - [goroutine调度器概述](base/go-scheduler-base.md)
 
