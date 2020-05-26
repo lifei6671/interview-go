@@ -20,6 +20,8 @@
 ## Golang 理论
 
 - [Goroutine调度策略](base/go-scheduler.md)
+- [goroutine调度器概述](base/go-scheduler-base.md)
+
 ## Redis基础
 
 - [Redis 基础数据结构](base/redis.md)
