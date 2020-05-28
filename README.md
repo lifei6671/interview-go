@@ -1,3 +1,5 @@
+# Golang 面试题搜集
+
 ## Golang 常见面试题目解析
 
 - [交替打印数字和字母](question/q001.md)
@@ -28,3 +30,8 @@
 - [Redis 基础数据结构](base/redis.md)
 - [Redis中的底层数据结构](base/redis-data-structure.md)
 - [Redis持久化的原理及优化](base/redis-rdb.md)
+- [Redis中内存淘汰算法实现](redis/redis-policy.md)
+
+## MySQL相关
+
+- [MySQL数据库经典面试题解析](mysql/mysql-interview.md)
