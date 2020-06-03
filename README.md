@@ -35,3 +35,4 @@
 ## MySQL相关
 
 - [MySQL数据库经典面试题解析](mysql/mysql-interview.md)
+- [MySQL InnoDB MVCC 机制的原理及实现](mysql/mysql-mvcc.md)
