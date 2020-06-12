@@ -18,6 +18,7 @@
 - [七道语法找错题目](question/q014.md)
 - [golang 并发题目测试](question/q015.md)
 - [记一道字节跳动的算法面试题](question/q016.md)
+- [多协程查询切片问题](question/q017.md)
 
 ## Golang 理论
 
