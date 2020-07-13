@@ -19,6 +19,9 @@
 - [golang 并发题目测试](question/q015.md)
 - [记一道字节跳动的算法面试题](question/q016.md)
 - [多协程查询切片问题](question/q017.md)
+- [对已经关闭的的chan进行读写，会怎么样？为什么？](question/q018.md)
+- [简单聊聊内存逃逸？](question/q019.md)
+- [字符串转成byte数组，会发生内存拷贝吗？](question/q020.md)
 
 ## Golang 理论
 
