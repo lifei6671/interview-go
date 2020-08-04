@@ -12,5 +12,5 @@ func main() {
  */
 func addBinary(a string, b string) string {
 	// write code here
-
+	return ""
 }
