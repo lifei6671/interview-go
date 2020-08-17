@@ -119,7 +119,7 @@ func strStrSunday(haystack, needle string) int {
 		offset := 1
 		for j := len(needle) - 1; j > 0; j-- {
 			if haystack[i] == needle[j] {
-				offset = len(needle) - j
+				offset = j
 				break
 			}
 		}

@@ -14,8 +14,8 @@ import "fmt"
 //输出: -1
 // https://www.geekxh.com/1.3.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B3%BB%E5%88%97/303.html#_02%E3%80%81sunday-%E5%8C%B9%E9%85%8D
 func main() {
-	haystack := "hello"
-	needle := "ll"
+	haystack := "Here is a little Hao"
+	needle := "little"
 	index := strStrSunday(haystack, needle)
 	fmt.Println(index)
 }
@@ -69,10 +69,10 @@ func strStrSunday(haystack, needle string) int {
 		if i >= len(haystack) {
 			return index
 		}
-		offset := 1
+		offset := 0
 		for j := len(needle) - 1; j > 0; j-- {
 			if haystack[i] == needle[j] {
-				offset = len(needle) - j
+				offset = j
 				break
 			}
 		}
