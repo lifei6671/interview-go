@@ -42,3 +42,7 @@
 - [MySQL数据库经典面试题解析](mysql/mysql-interview.md)
 - [MySQL InnoDB MVCC 机制的原理及实现](mysql/mysql-mvcc.md)
 - [为什么MySQL使用B+树做索引？](mysql/mysql-index-b-plus.md)
+
+## 面试必备算法
+
+- [字符串之实现 Sunday 匹配](algorithm/docs/match-sunday-string.md)
