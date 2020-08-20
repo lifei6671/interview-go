@@ -51,3 +51,4 @@
 - [字符串之验证回文串](algorithm/docs/verify-palindrome.md)
 - [滑动窗口最大值](algorithm/docs/sliding-window-maximum.md)
 - [最长公共前缀](algorithm/docs/longest-common-prefix.md)
+- [两个数组的交集](algorithm/docs/array-intersection.md)
