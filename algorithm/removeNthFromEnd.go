@@ -51,3 +51,26 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 	return head
 }
+
+/**
+ *
+ * @param pListHead ListNode类
+ * @param k int整型
+ * @return ListNode类
+ */
+func FindKthToTail(pListHead *ListNode, k int) *ListNode {
+	// write code here
+	slow := pListHead
+	fast := pListHead
+	for i := k; i > 0; i-- {
+		if fast == nil {
+			return nil
+		}
+		fast = fast.Next
+	}
+	for fast != nil {
+		slow = slow.Next
+		fast = fast.Next
+	}
+	return slow
+}
