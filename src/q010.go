@@ -7,14 +7,14 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"sync"
 	"time"
 )
 
 type sp interface {
-	Out(key string, val interface{})  //存入key /val，如果该key读取的goroutine挂起，则唤醒。此方法不会阻塞，时刻都可以立即执行并返回
-	Rd(key string, timeout time.Duration) interface{}  //读取一个key，如果key不存在阻塞，等待key存在或者超时
+	Out(key string, val interface{})                  //存入key /val，如果该key读取的goroutine挂起，则唤醒。此方法不会阻塞，时刻都可以立即执行并返回
+	Rd(key string, timeout time.Duration) interface{} //读取一个key，如果key不存在阻塞，等待key存在或者超时
 }
 
 type Map struct {
@@ -33,7 +33,7 @@ func (m *Map) Out(key string, val interface{}) {
 	item, ok := m.c[key]
 	if !ok {
 		m.c[key] = &entry{
-			value: val,
+			value:   val,
 			isExist: true,
 		}
 		return
@@ -49,30 +49,32 @@ func (m *Map) Out(key string, val interface{}) {
 }
 
 func (m *Map) Rd(key string, timeout time.Duration) interface{} {
-	m.rmx.Lock()
+	m.rmx.RLock()
 	if e, ok := m.c[key]; ok && e.isExist {
-		m.rmx.Unlock()
+		m.rmx.RUnlock()
 		return e.value
 	} else if !ok {
+		m.rmx.RUnlock()
+		m.rmx.Lock()
 		e = &entry{ch: make(chan struct{}), isExist: false}
 		m.c[key] = e
 		m.rmx.Unlock()
-		fmt.Println("协程阻塞 -> ", key)
+		log.Println("协程阻塞 -> ", key)
 		select {
 		case <-e.ch:
 			return e.value
 		case <-time.After(timeout):
-			fmt.Println("协程超时 -> ", key)
+			log.Println("协程超时 -> ", key)
 			return nil
 		}
 	} else {
-		m.rmx.Unlock()
-		fmt.Println("协程阻塞 -> ", key)
+		m.rmx.RUnlock()
+		log.Println("协程阻塞 -> ", key)
 		select {
 		case <-e.ch:
 			return e.value
 		case <-time.After(timeout):
-			fmt.Println("协程超时 -> ", key)
+			log.Println("协程超时 -> ", key)
 			return nil
 		}
 	}
@@ -86,17 +88,20 @@ func main() {
 
 	for i := 0; i < 10; i++ {
 		go func() {
-			val := mapval.Rd("key", time.Second * 6)
-			fmt.Println(val)
+			val := mapval.Rd("key", time.Second*6)
+			log.Println("读取值为->", val)
 		}()
 	}
 
 	time.Sleep(time.Second * 3)
-	for i := 0; i < 10; i ++ {
+	for i := 0; i < 10; i++ {
 		go func(val int) {
 			mapval.Out("key", val)
 		}(i)
 	}
 
 	time.Sleep(time.Second * 30)
+}
+func init() {
+	log.SetFlags(log.LstdFlags | log.Lshortfile)
 }
