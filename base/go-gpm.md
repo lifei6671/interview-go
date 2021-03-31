@@ -109,7 +109,7 @@ type m struct {
 
 - p：正在运行代码的处理器
 - nextp：暂存的处理器
-- old：系统调用之前的线程的处理器
+- oldp：系统调用之前的线程的处理器
 
 ### Processor
 
