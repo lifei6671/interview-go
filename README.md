@@ -23,6 +23,7 @@
 - [简单聊聊内存逃逸？](question/q019.md)
 - [字符串转成byte数组，会发生内存拷贝吗？](question/q020.md)
 - [http包的内存泄漏](question/q021.md)
+- [sync.Map 的用法](question/q022.md)
 
 ## Golang 理论
 
