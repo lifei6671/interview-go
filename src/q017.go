@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"sync"
 	"time"
 )
 
@@ -15,13 +16,23 @@ func main() {
 	target := 345
 	ctx, cancel := context.WithCancel(context.Background())
 	resultChan := make(chan bool)
+	wg := &sync.WaitGroup{}
+	finishChan := make(chan struct{})
 	for i := 0; i < dataLen; i += size {
 		end := i + size
 		if end >= dataLen {
 			end = dataLen - 1
 		}
-		go SearchTarget(ctx, data[i:end], target, resultChan)
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			SearchTarget(ctx, data[i:end], target, resultChan)
+		}()
 	}
+	go func() {
+		wg.Wait()
+		finishChan <- struct{}{}
+	}()
 	select {
 	case <-timer.C:
 		fmt.Fprintln(os.Stderr, "Timeout! Not Found")
@@ -29,6 +40,8 @@ func main() {
 	case <-resultChan:
 		fmt.Fprintf(os.Stdout, "Found it!\n")
 		cancel()
+	case <- finishChan:
+		fmt.Printf("[%d] not found in slice\n", target)
 	}
 
 	time.Sleep(time.Second * 2)
