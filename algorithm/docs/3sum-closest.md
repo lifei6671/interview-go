@@ -64,7 +64,7 @@ func threeSumClosest(nums []int, target int) int {
 		r := len(nums) - 1
 		for l < r {
 			current := nums[i] + nums[l] + nums[r]
-			if math.Abs(float64(sum - current)) > math.Abs(float64(target - current)) {
+			if math.Abs(float64(sum - target)) > math.Abs(float64(target - current)) {
 				sum = current
 			}
 			if current < target {
