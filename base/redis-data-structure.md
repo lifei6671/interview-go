@@ -24,7 +24,7 @@ SET "Hello" "World"
 
 Redis对使用者暴露了五种`Value Type`, 其底层实现的数据结构有8种, 分别是:
 
-- SDS - simple synamic string - 支持自动动态扩容的字节数组
+- SDS - simple dynamic string - 支持自动动态扩容的字节数组
 - list - 平平无奇的链表
 - dict - 使用双哈希表实现的, 支持平滑扩容的字典
 - zskiplist - 附加了后向指针的跳跃表
