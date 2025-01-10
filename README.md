@@ -33,6 +33,8 @@
 - [goroutine调度器概述](base/go-scheduler-base.md)
 - [Golang的垃圾回收机制是如何工作的？](https://study.disign.me/article/202502/35.Golang垃圾回收(GC)介绍.md)
 - [golang中如果出现了内存泄露， 怎么排查？一般都有哪些情况可能导致内存泄露](https://study.disign.me/article/202502/36.Go%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D.md)
+- [讲讲GMP模型](https://study.disign.me/article/202502/38.go-GPM%E6%A8%A1%E5%9E%8B.md)
+- [Golang常见语法面试题总结]()
 
 ## Redis基础
 
