@@ -26,6 +26,7 @@
 - [sync.Map 的用法](question/q022.md)
 - [Golang基础语法相关题目](question/q023.md)
 - [go 面试题：连接字符串有几种方法](question/q024.md)
+- [Golang 基础语法题汇集](question/q025.md)
 
 ## Golang 理论
 
