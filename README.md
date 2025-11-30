@@ -68,3 +68,7 @@
 
 - [冒泡排序](algorithm/docs/bubble-sort.md)
 - [选择排序](algorithm/docs/selection-sort.md)
+
+## 大模型基础
+
+- [常见基础大模型知识面试题](llm/llm.md)
