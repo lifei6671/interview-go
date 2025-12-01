@@ -68,6 +68,7 @@
 
 - [冒泡排序](algorithm/docs/bubble-sort.md)
 - [选择排序](algorithm/docs/selection-sort.md)
+- [链表常见算法](algorithm/list/README.md)
 
 ## 大模型基础
 
