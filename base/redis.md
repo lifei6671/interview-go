@@ -18,7 +18,7 @@ String类型是二进制安全的，意思是 redis 的 string 可以包含任�
 
 ### 2.Hash （哈希）
 
-是一个Mapmap，指值本身又是一种键值对结构，如 value={{field1,value1},......fieldN,valueN}}
+是一个Mapmap，指值本身又是一种键值对结构，如 `value={{field1,value1},......fieldN,valueN}}`
 
 ![](../images/1289934-20190621232209365-1000366002.png)
 
