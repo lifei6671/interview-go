@@ -47,6 +47,7 @@
 - [Redis中内存淘汰算法实现](redis/redis-policy.md)
 - [Redis主从复制原理](redis/redis-master-slave.md)
 - [AOF 和 RDB 是什么？AOF 持久化策略有哪三种？你们是怎么选的？AOF 什么时候重写？为什么重写？](./redis/0001.md)
+- [Redis 6 里的 Threaded I/O 是想解决什么问题？](./redis/0002.md)
 
 ## MySQL相关
 
@@ -93,3 +94,4 @@
 - [面试题：如果你是架构师，如何保证系统的可用性？](./architecture/0007.md)
 - [IO 多路复用是什么？多路是什么？复用了什么？](./architecture/0008.md)
 - [面试题：怎么理解可观测性（Observability）？](./architecture/0009.md)
+- [短链接唯一 ID 设计这块挑战是什么？](./architecture/0010.md)
