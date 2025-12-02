@@ -97,3 +97,4 @@
 - [短链接唯一 ID 设计这块挑战是什么？](./architecture/0010.md)
 - [讲一下 Trace 的数据模型，什么是 Span，Trace ID 和 Span ID 是怎么设计的？](./architecture/0011.md)
 - [Metrics 的数据模型有了解吗？](./architecture/0012.md)
+- [LSM-Tree 和 B+ Tree 的本质区别是什么？](./architecture/0013.md)
