@@ -95,3 +95,5 @@
 - [IO 多路复用是什么？多路是什么？复用了什么？](./architecture/0008.md)
 - [面试题：怎么理解可观测性（Observability）？](./architecture/0009.md)
 - [短链接唯一 ID 设计这块挑战是什么？](./architecture/0010.md)
+- [讲一下 Trace 的数据模型，什么是 Span，Trace ID 和 Span ID 是怎么设计的？](./architecture/0011.md)
+- [Metrics 的数据模型有了解吗？](./architecture/0012.md)
