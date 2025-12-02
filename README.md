@@ -46,6 +46,7 @@
 - [Redis持久化的原理及优化](base/redis-rdb.md)
 - [Redis中内存淘汰算法实现](redis/redis-policy.md)
 - [Redis主从复制原理](redis/redis-master-slave.md)
+- [AOF 和 RDB 是什么？AOF 持久化策略有哪三种？你们是怎么选的？AOF 什么时候重写？为什么重写？](./redis/0001.md)
 
 ## MySQL相关
 
@@ -53,6 +54,7 @@
 - [MySQL InnoDB MVCC 机制的原理及实现](mysql/mysql-mvcc.md)
 - [为什么MySQL使用B+树做索引？](mysql/mysql-index-b-plus.md)
 - [MySQL 单列索引，联合索引的存储区别?](./mysql/0001.md)
+- [了解索引下推吗？什么情况下会下推到引擎去处理？什么情况下索引会失效？](./mysql/0002.md)
 
 ## 面试必备算法
 
@@ -90,3 +92,4 @@
 - [对商品拆分库存行后，现在 1 单要买 2 个商品，这两个库存分别在 2 个库存行怎么处理?](./architecture/0006.md)
 - [面试题：如果你是架构师，如何保证系统的可用性？](./architecture/0007.md)
 - [IO 多路复用是什么？多路是什么？复用了什么？](./architecture/0008.md)
+- [面试题：怎么理解可观测性（Observability）？](./architecture/0009.md)
