@@ -52,6 +52,7 @@
 - [MySQL数据库经典面试题解析](mysql/mysql-interview.md)
 - [MySQL InnoDB MVCC 机制的原理及实现](mysql/mysql-mvcc.md)
 - [为什么MySQL使用B+树做索引？](mysql/mysql-index-b-plus.md)
+- [MySQL 单列索引，联合索引的存储区别?](./mysql/0001.md)
 
 ## 面试必备算法
 
@@ -63,6 +64,7 @@
 - [最长公共前缀](algorithm/docs/longest-common-prefix.md)
 - [两个数组的交集](algorithm/docs/array-intersection.md)
 - [最接近的三数之和](algorithm/docs/3sum-closest.md)
+- [从字符串中解析最大数字](algorithm/0001.md)
 
 ### 排序算法
 
@@ -73,3 +75,12 @@
 ## 大模型基础
 
 - [常见基础大模型知识面试题](llm/llm.md)
+
+## Elasticsearch 场景面试题及解析
+
+- [ES数据倾斜如何解决？](./001.md)
+
+## 架构设计
+
+- [设计一个关注人和被关注人的场景，怎么更合理更快的查询？](./architecture/0001.md)
+- [详细解释下 Kafka 消费的顺序的原理。](./architecture/0002.md)
